@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background-color: blueviolet;
+            margin: 0;
+        }
+
+        .divs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .heading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 30vh;
+            background-color: blueviolet;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            position: relative;
+            width: 320px;
+            height: 400px;
+            background: rgb(7, 7, 7);
+            margin: 20px;
+            overflow: hidden;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: var(--y);
+            left: var(--x);
+            transform: translate(-50%, -50%);
+            background: radial-gradient(var(--clr), transparent, transparent);
+            width: 700px;
+            height: 700px;
+            opacity: 0;
+            transition: 0.5s, top 0s, left 0s;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            inset: 2px;
+            background-color: rgba(7, 7, 7, 0.7);
+        }
+
+        .ligth1 {
+            color: rgb(247, 0, 255);
+            padding: 20px;
+            text-align: center;
+            /* Center text inside ligth1 */
+            font-size: 17px;
+            font-family: monospace;
+            text-transform: capitalize;
+        }
+
+        button {
+            margin-top: 20px;
+            /* Add margin to create space above button */
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff204e;
+            /* Button background color */
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e0183a;
+            /* Darken button on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Hi! Ami Chuppy.</h1>
+        <h2>Go down if you are <br> interested in<br>what I have done next <br>🙂🙂🙂</h2>
+    </div>
+
+    <div class="divs">
+        <div class="container">
+            <div class="card card1" style="--clr: #ff204e">
+                <div class="ligth1">
+                    <h1>tumi jodi single how tahole click on next.</h1>
+                </div>
+                <button>Next</button>
+            </div>
+            <div class="card" style="--clr: #e2703a">
+                <div class="ligth1">
+                    <h1>ami ki tomar type ar??? if yes then go for the next</h1>
+                </div>
+                <button>yes</button>
+            </div>
+            <div class="card" style="--clr: #0ff90c">
+                <div class="ligth1">
+                    <h1>sorom lagtase amr 😖😖😖</h1>
+                </div>
+                <button>Next</button>
+            </div>
+            <div class="card" style="--clr: #1e90ff">
+                <div class="ligth1">
+                    <h1>are you serious tumi pura ta daakte chow j ami ki korsi tomr jonno😨😨😨???</h1>
+                </div>
+                <button>yes</button>
+            </div>
+            <div class="card" style="--clr: #ff1493">
+                <div class="ligth1">
+                    <h1> then ist's Final stage click on done</h1>
+                </div>
+            </div>
+            <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fchuppy-fun-project.netlify.app%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR3cW5PXxq1_NdMCwIiDCb6IpIoJ9GSHtfHlczOVMBK8-CLM3YZQ1n6st0o_aem_1cThNNO2mm4DQKBs0PzuLA&h=AT156npcQsTq1I_tIhpXi5KvwWKavJg4JeenEPMXNGEAL_ciFiyEENF15uwhCjucABCSYDj_coJkr2lvZ_h7Q75ByL8P59N4VYGTvYuI62Ye72mBVPFcEy1ESOhrqo9TcRfNEQ"><button>Done</button></a>
+        </div>
+    </div>
+
+    <script>
+        alert("There is an important message for you, so please follow the rules.");
+        alert("1. Jodi ak tao miss jay tahole continue korba na pls 🙏");
+        alert("Click OK if you are ready. OK!");
+
+        let cards = document.querySelectorAll(".card");
+        cards.forEach(card => {
+            card.onmousemove = function (e) {
+                let x = e.pageX - card.offsetLeft;
+                let y = e.pageY - card.offsetTop;
+
+                card.style.setProperty("--x", x + "px");
+                card.style.setProperty("--y", y + "px");
+            };
+        });
+    </script>
+</body>
+
+</html>
